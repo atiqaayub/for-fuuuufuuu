@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For Fuufuu ❤️</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-family: Arial, sans-serif;
+
+            background: linear-gradient(
+                135deg,
+                #ffd6e7,
+                #ffeaf2,
+                #ffc8dc
+            );
+
+            overflow: hidden;
+
+            position: relative;
+        }
+
+
+        /* =========================
+           FLOATING HEART BACKGROUND
+        ========================= */
+
+        .hearts {
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            overflow: hidden;
+
+            pointer-events: none;
+
+            z-index: 1;
+        }
+
+
+        .heart {
+            position: absolute;
+
+            bottom: -60px;
+
+            display: block;
+
+            line-height: 1;
+
+            opacity: 0;
+
+            pointer-events: none;
+
+            user-select: none;
+            -webkit-user-select: none;
+
+            animation-name: float;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+
+            will-change: transform, opacity;
+        }
+
+
+        /* Heart positions and sizes */
+
+        .heart:nth-child(1) {
+            left: 5%;
+            font-size: 22px;
+            animation-duration: 8s;
+            animation-delay: 0s;
+        }
+
+        .heart:nth-child(2) {
+            left: 15%;
+            font-size: 30px;
+            animation-duration: 10s;
+            animation-delay: 2s;
+        }
+
+        .heart:nth-child(3) {
+            left: 27%;
+            font-size: 18px;
+            animation-duration: 7s;
+            animation-delay: 4s;
+        }
+
+        .heart:nth-child(4) {
+            left: 38%;
+            font-size: 27px;
+            animation-duration: 9s;
+            animation-delay: 1s;
+        }
+
+        .heart:nth-child(5) {
+            left: 50%;
+            font-size: 20px;
+            animation-duration: 8s;
+            animation-delay: 3s;
+        }
+
+        .heart:nth-child(6) {
+            left: 62%;
+            font-size: 32px;
+            animation-duration: 11s;
+            animation-delay: 0s;
+        }
+
+        .heart:nth-child(7) {
+            left: 73%;
+            font-size: 21px;
+            animation-duration: 8s;
+            animation-delay: 2.5s;
+        }
+
+        .heart:nth-child(8) {
+            left: 84%;
+            font-size: 28px;
+            animation-duration: 9s;
+            animation-delay: 4s;
+        }
+
+        .heart:nth-child(9) {
+            left: 94%;
+            font-size: 19px;
+            animation-duration: 7s;
+            animation-delay: 1s;
+        }
+
+        .heart:nth-child(10) {
+            left: 45%;
+            font-size: 24px;
+            animation-duration: 12s;
+            animation-delay: 6s;
+        }
+
+
+        /* Simple vertical animation
+           No rotation or horizontal movement
+           = no weird rendering lines */
+
+        @keyframes float {
+
+            0% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.6;
+            }
+
+            50% {
+                transform: translateY(-55vh);
+                opacity: 0.55;
+            }
+
+            85% {
+                opacity: 0.35;
+            }
+
+            100% {
+                transform: translateY(-120vh);
+                opacity: 0;
+            }
+        }
+
+
+        /* =========================
+           DIALOG BOX
+        ========================= */
+
+        #dialog {
+
+            width: 380px;
+
+            max-width: 90%;
+
+            padding: 40px 30px;
+
+            text-align: center;
+
+            background: rgba(255,255,255,0.92);
+
+            border-radius: 28px;
+
+            box-shadow:
+                0 20px 50px rgba(180,70,120,0.25);
+
+            animation: pop 0.5s ease;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        @keyframes pop {
+
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+        }
+
+
+        /* =========================
+           TEXT
+        ========================= */
+
+        h1 {
+
+            margin-top: 0;
+
+            color: #a83d67;
+
+            font-size: 32px;
+
+        }
+
+
+        p {
+
+            color: #704455;
+
+            font-size: 18px;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
+        button {
+
+            border: none;
+
+            padding: 13px 28px;
+
+            margin: 6px;
+
+            border-radius: 30px;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+
+        }
+
+
+        button:hover {
+
+            transform: scale(1.08);
+
+        }
+
+
+        .yes {
+
+            background: #ff78a8;
+
+            color: white;
+
+            box-shadow:
+                0 8px 20px rgba(255,120,168,0.3);
+
+        }
+
+
+        .no {
+
+            background: #ffe1eb;
+
+            color: #a83d67;
+
+        }
+
+
+        /* =========================
+           HAPPY CAT
+        ========================= */
+
+        .cat {
+
+            font-size: 100px;
+
+            margin: 10px;
+
+            animation: bounce 1s infinite alternate;
+
+        }
+
+
+        @keyframes bounce {
+
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-10px);
+            }
+
+        }
+
+
+        /* =========================
+           NO BUTTON REACTION
+        ========================= */
+
+        .shake {
+
+            animation: shake 0.35s ease;
+
+        }
+
+
+        @keyframes shake {
+
+            25% {
+                transform: translateX(-8px);
+            }
+
+            50% {
+                transform: translateX(8px);
+            }
+
+            75% {
+                transform: translateX(-5px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 500px) {
+
+            #dialog {
+                padding: 35px 25px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            p {
+                font-size: 17px;
+            }
+
+            .cat {
+                font-size: 80px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- Floating hearts -->
+
+    <div class="hearts">
+
+        <div class="heart">💗</div>
+        <div class="heart">💕</div>
+        <div class="heart">💖</div>
+        <div class="heart">💗</div>
+        <div class="heart">💕</div>
+        <div class="heart">💖</div>
+        <div class="heart">💗</div>
+        <div class="heart">💕</div>
+        <div class="heart">💖</div>
+        <div class="heart">💗</div>
+
+    </div>
+
+
+    <!-- Main dialog -->
+
+    <div id="dialog">
+
+        <h1>
+            Sorrry fuufuu 😔
+        </h1>
+
+        <p>
+             😔😔😔
+        </p>
+
+        <button
+            class="yes"
+            onclick="question()">
+
+            Okay 💗
+
+        </button>
+
+    </div>
+
+
+    <script>
+
+
+        /*
+           STEP 1:
+           Show the question
+        */
+
+        function question() {
+
+            document.getElementById("dialog").innerHTML = `
+
+                <h1>
+                    are you happy now? 😔
+                </h1>
+
+                <p>
+                    please be honest 😔
+                </p>
+
+                <button
+                    class="yes"
+                    onclick="yesAnswer()">
+
+                    YES ❤️
+
+                </button>
+
+                <button
+                    class="no"
+                    onclick="noAnswer()">
+
+                    NO 😔
+
+                </button>
+
+            `;
+
+        }
+
+
+        /*
+           STEP 2:
+           If they press NO
+        */
+
+        function noAnswer() {
+
+            const dialog =
+                document.getElementById("dialog");
+
+
+            dialog.innerHTML = `
+
+                <h1>
+                    SORRRRRRRY NAAA 😔
+                </h1>
+
+                <p>
+                     😔😔😔😔
+                </p>
+
+                <button
+                    class="yes"
+                    onclick="question()">
+
+                    Try again? 💗
+
+                </button>
+
+            `;
+
+        }
+
+
+        /*
+           STEP 3:
+           If they press YES
+        */
+
+        function yesAnswer() {
+
+            document.getElementById("dialog").innerHTML = `
+
+                <h1>
+                    Yayyyy lessssgo 😭❤️
+                </h1>
+
+                <div class="cat">
+                    🥹🐱
+                </div>
+
+                <p>
+                    happy fuufuu = happy me 🤭
+                </p>
+
+            `;
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
